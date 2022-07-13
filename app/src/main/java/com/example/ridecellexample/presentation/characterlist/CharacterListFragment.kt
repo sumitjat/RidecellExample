@@ -72,7 +72,7 @@ class CharacterListFragment : Fragment() {
 
     private fun initActions() {
         imageAdapter.setOnItemClickListener(object : CharacterAdapter.OnItemClickListener {
-            override fun onItemClick(view: View, characterData: CharacterData) {
+            override fun onItemClick(characterData: CharacterData) {
                 (requireActivity() as AppCompatActivity).supportActionBar?.hide()
                 val bundle = Bundle().apply {
                     putParcelable("selected_character", characterData)
