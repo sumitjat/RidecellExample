@@ -14,10 +14,10 @@ class CharacterListRepository @Inject constructor(
     private val characterDao: CharacterDao
 ) {
 
-    private suspend fun fetchData(): Resource<List<CharacterData>> =
+    private fun fetchData(): Resource<List<CharacterData>> =
         Resource.Success(characterDao.getAllCharacter())
 
-    private suspend fun searchData(searchQuery: String): Resource<List<CharacterData>> =
+    private fun searchData(searchQuery: String): Resource<List<CharacterData>> =
         Resource.Success(characterDao.searchCharacter("%$searchQuery%"))
 
     suspend fun getSearchedImage(
