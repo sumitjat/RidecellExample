@@ -26,7 +26,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.MyViewHolder>() {
     private lateinit var itemClickListener: OnItemClickListener
 
     interface OnItemClickListener {
-        fun onItemClick(view: View, characterData: CharacterData)
+        fun onItemClick(characterData: CharacterData)
     }
 
     fun setOnItemClickListener(mItemClickListener: OnItemClickListener) {
@@ -63,7 +63,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.MyViewHolder>() {
         init {
 
             binding.root.setOnClickListener {
-                itemClickListener.onItemClick(it, getItem(adapterPosition))
+                itemClickListener.onItemClick(getItem(adapterPosition))
             }
         }
 
