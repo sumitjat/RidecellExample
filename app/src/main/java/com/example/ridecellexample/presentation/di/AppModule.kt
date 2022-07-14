@@ -76,7 +76,7 @@ object AppModule {
             appContext,
             AppDatabase::class.java,
             "ride_well_database"
-        ).allowMainThreadQueries().build()
+        ).build()
     }
 
     @Singleton
